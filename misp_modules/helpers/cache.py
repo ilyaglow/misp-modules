@@ -21,10 +21,11 @@
 
 import redis
 import hashlib
+import os
 
-port = 6379
-hostname = '127.0.0.1'
-db = 5
+port = os.getenv('REDIS_PORT', 6379)
+hostname = os.getenv('REDIS_HOST', '127.0.0.1')
+db = os.getenv('REDIS_DB', 5)
 
 
 def selftest(enable=True):
